@@ -1,0 +1,28 @@
+{
+  "name": "ascend",
+  "version": "1.0.0",
+  "description": "A crash-safe background loop that picks the highest-value task with a bandit, runs it through any runner you plug in, records the outcome, and biases the next pick.",
+  "license": "MIT",
+  "type": "commonjs",
+  "scripts": {
+    "test": "node examples/demo.cjs >/dev/null && echo ok",
+    "check": "node --check lib/ascend.cjs && node --check examples/demo.cjs && echo ok"
+  },
+  "keywords": [
+    "autonomous-agent",
+    "task-runner",
+    "ucb1",
+    "multi-armed-bandit",
+    "daemon",
+    "crash-safe",
+    "zero-dependencies"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "bin": {
+    "ascend": "lib/ascend.cjs"
+  }
+}

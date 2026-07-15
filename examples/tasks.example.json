@@ -1,0 +1,5 @@
+[
+  { "id": "echo-hello", "cmd": "echo hello from ascend" },
+  { "id": "node-version", "cmd": "node --version" },
+  { "id": "list-here", "cmd": "node -e \"console.log(require('fs').readdirSync('.').length + ' entries')\"" }
+]
