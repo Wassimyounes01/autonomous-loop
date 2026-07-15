@@ -1,6 +1,6 @@
-# Contributing to ASCEND
+# Contributing to Autonomous Loop
 
-Thanks for your interest! ASCEND is MIT-licensed and built to be forked, extended, and
+Thanks for your interest! Autonomous Loop is MIT-licensed and built to be forked, extended, and
 dropped into your own stack.
 
 ## Ground rules

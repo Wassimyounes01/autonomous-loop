@@ -5,8 +5,8 @@ const path = require('path');
 
 // Isolate demo state so it doesn't touch a real ./data dir.
 // (Must be set BEFORE requiring the lib — the data/lock paths resolve at load time.)
-process.env.ASCEND_DATA_DIR = path.join(require('os').tmpdir(), 'ascend-demo-' + process.pid);
-const { runLoop } = require('../lib/ascend.cjs');
+process.env.AUTONOMOUS_LOOP_DATA_DIR = path.join(require('os').tmpdir(), 'autonomous-loop-demo-' + process.pid);
+const { runLoop } = require('../lib/autonomous-loop.cjs');
 
 // Two tasks with different (stochastic-ish but deterministic) payoffs. In a real loop the runner
 // would spawn a command or call an agent; here it just returns a reward so the bandit is visible.

@@ -1,12 +1,12 @@
 {
-  "name": "ascend",
+  "name": "autonomous-loop",
   "version": "1.0.0",
   "description": "A crash-safe background loop that picks the highest-value task with a bandit, runs it through any runner you plug in, records the outcome, and biases the next pick.",
   "license": "MIT",
   "type": "commonjs",
   "scripts": {
     "test": "node examples/demo.cjs >/dev/null && echo ok",
-    "check": "node --check lib/ascend.cjs && node --check examples/demo.cjs && echo ok"
+    "check": "node --check lib/autonomous-loop.cjs && node --check examples/demo.cjs && echo ok"
   },
   "keywords": [
     "autonomous-agent",
@@ -23,6 +23,6 @@
   "dependencies": {},
   "devDependencies": {},
   "bin": {
-    "ascend": "lib/ascend.cjs"
+    "autonomous-loop": "lib/autonomous-loop.cjs"
   }
 }

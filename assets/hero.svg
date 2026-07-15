@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" role="img" aria-label="ASCEND — A crash-safe background loop that picks the highest-value task with a bandit, runs it through any runner you plug in, records the outcome, and biases the next pick.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" role="img" aria-label="Autonomous Loop — A crash-safe background loop that picks the highest-value task with a bandit, runs it through any runner you plug in, records the outcome, and biases the next pick.">
   <defs>
     <style>
       :root { color-scheme: light dark; }
@@ -29,7 +29,7 @@
   <text class="accent" x="98" y="108" font-family="ui-monospace,monospace" font-size="15" letter-spacing="6" font-weight="600">AUTONOMOUS TASK-RUNNER LOOP</text>
 
   <!-- title -->
-  <text class="title" x="96" y="188" font-size="76">🛰️ ASCEND</text>
+  <text class="title" x="96" y="188" font-size="76">🛰️ Autonomous Loop</text>
 
   <!-- tagline -->
   <text class="tag" x="98" y="232" font-size="22">A crash-safe background loop that picks the highest-value task with a bandit, runs it through any runner you plug in, records the outcome, and biases the next pick.</text>

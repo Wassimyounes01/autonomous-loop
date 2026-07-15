@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ASCEND — A crash-safe background loop that picks the highest-value task with a bandit, runs it through any runner you plug in, records the outcome, and biases the next pick.</title>
+<title>Autonomous Loop — A crash-safe background loop that picks the highest-value task with a bandit, runs it through any runner you plug in, records the outcome, and biases the next pick.</title>
 <style>
   :root{
     --ink:#0A0D12; --panel:#11151d; --panel-2:#151b25; --line:#1e2733;
@@ -65,7 +65,7 @@
 </head>
 <body>
 <header class="bar"><div class="wrap">
-  <div class="mark"><span class="dot"></span>ASCEND</div>
+  <div class="mark"><span class="dot"></span>Autonomous Loop</div>
   <button id="themeToggle" aria-label="Toggle color theme">◐ theme</button>
 </div></header>
 
@@ -73,7 +73,7 @@
   <div class="eyebrow">AUTONOMOUS TASK-RUNNER LOOP</div>
   <h1>Pick. Run.<br><span class="under">Learn. Repeat.</span></h1>
   <p class="lede">A crash-safe background loop that picks the highest-value task with a bandit, runs it through any runner you plug in, records the outcome, and biases the next pick.</p>
-  <p class="sub">ASCEND is the daemon that keeps an agent working on its own. Give it a list of tasks and a runner — a shell command, an agent CLI, any async function — and each cycle it selects one task with a UCB1 bandit (balancing proven winners against under-tried options), runs it under a wall-clock timeout, records the outcome and a reward, and updates the task's stats so the next pick is smarter. A pid-liveness lock means only one instance runs and a dead one never wedges the queue. Run one cycle, or loop forever on an interval as a service. Pure Node, zero dependencies, fail-open.</p>
+  <p class="sub">Autonomous Loop is the daemon that keeps an agent working on its own. Give it a list of tasks and a runner — a shell command, an agent CLI, any async function — and each cycle it selects one task with a UCB1 bandit (balancing proven winners against under-tried options), runs it under a wall-clock timeout, records the outcome and a reward, and updates the task's stats so the next pick is smarter. A pid-liveness lock means only one instance runs and a dead one never wedges the queue. Run one cycle, or loop forever on an interval as a service. Pure Node, zero dependencies, fail-open.</p>
   <div class="cta">
     <a class="btn primary" href="#start">▸ Quickstart</a>
     <a class="btn" href="#">View on GitHub</a>
@@ -89,7 +89,7 @@
 <section><div class="wrap">
   <div class="shead"><div class="eyebrow">what it does</div><h2>An agent that runs itself.</h2></div>
   <div class="cards"><div class="card"><div class="n">01 / SELECT</div><h3>Choose, don't just fire</h3><p>Each cycle a UCB1 bandit scores every task from its history — average reward plus an exploration bonus for under-tried tasks — and picks the best. Proven winners run more; nothing is starved. Force a specific task, or supply your own selector; the default balances exploit and explore for you.</p></div>
-    <div class="card"><div class="n">02 / RUN</div><h3>Any executor you like</h3><p>A runner is just `async (task, ctx) =&gt; { ok, output, reward? }`. Ship the built-in shell runner to spawn a command with a hard timeout, or inject your own to call an agent CLI, run a test, hit an API. ASCEND wraps it with the loop, the lock, and the recording — you bring the doing.</p></div>
+    <div class="card"><div class="n">02 / RUN</div><h3>Any executor you like</h3><p>A runner is just `async (task, ctx) =&gt; { ok, output, reward? }`. Ship the built-in shell runner to spawn a command with a hard timeout, or inject your own to call an agent CLI, run a test, hit an API. Autonomous Loop wraps it with the loop, the lock, and the recording — you bring the doing.</p></div>
     <div class="card"><div class="n">03 / RECORD</div><h3>Learn from every run</h3><p>Each outcome appends to a log and updates the task's reward stats, so the next selection is better-informed. A pid-liveness lock keeps exactly one loop alive and clears a dead one instantly. Run --once, or --loop on an --interval as a systemd/pm2 service.</p></div></div>
 </div></section>
 
@@ -97,21 +97,21 @@
   <div class="shead"><div class="eyebrow">quickstart</div><h2>Up and running in a clone.</h2>
   <p>Every value comes from <code>.env</code>. Nothing here is tied to any account — bring your own.</p></div>
   <pre class="code"><span class="c"># 1. no install needed — pure Node builtins</span>
-node lib/ascend.cjs --once            # run one cycle over the example tasks (shell runner)
+node lib/autonomous-loop.cjs --once            # run one cycle over the example tasks (shell runner)
 
 <span class="c"># 2. loop forever on an interval (run as a service)</span>
-node lib/ascend.cjs --loop --interval=1800
+node lib/autonomous-loop.cjs --loop --interval=1800
 
 <span class="c"># 3. see the bandit concentrate on the higher-reward task</span>
 node examples/demo.cjs
 
 <span class="c"># 4. in your code — bring your own tasks + runner</span>
-<span class="c">#   const { runLoop } = require('./lib/ascend.cjs');</span>
+<span class="c">#   const { runLoop } = require('./lib/autonomous-loop.cjs');</span>
 <span class="c">#   await runLoop({ tasks, runner: async (t) =&gt; ({ ok: true, output, reward }), once: true });</span></pre>
 </div></div></section>
 
 <footer><div class="wrap" style="display:flex;justify-content:space-between;width:100%;flex-wrap:wrap;gap:12px">
-  <span>ASCEND · select · run · record</span><span>MIT · bring your own keys · $0 to run</span>
+  <span>Autonomous Loop · select · run · record</span><span>MIT · bring your own keys · $0 to run</span>
 </div></footer>
 
 <script>
