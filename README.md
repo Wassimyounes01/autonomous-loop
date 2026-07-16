@@ -77,6 +77,14 @@ node examples/demo.cjs
 
 ---
 
+## See it run
+
+<p align="center">
+  <img src="assets/product.svg" alt="Autonomous Loop — product shot" width="100%">
+</p>
+
+---
+
 ## Repository layout
 
 ```
@@ -88,6 +96,18 @@ autonomous-loop/
 │   └── tasks.example.json  ← a task list for the shell runner
 └── data/                   ← per-task stats + outcome log (gitignored, auto-created)
 ```
+
+---
+
+## Concepts
+
+| Concept | Meaning |
+|---|---|
+| **Bandit selector** | UCB1 picks the next task by exploit/explore score computed from past recorded rewards — no scheduler config to hand-tune. |
+| **Runner seam** | The loop runs whatever you inject: a shell command, an agent CLI, an async function. The loop is the harness, not the worker. |
+| **Reward record** | After each run you record an outcome; the bandit's next pick is biased by it. |
+| **Pid-liveness lock** | One instance at a time, enforced by checking the lock-holder PID is actually alive — a crashed run never wedges the queue. |
+| **Crash-safe loop** | State persists across restarts; the loop resumes where it died instead of starting over. |
 
 ---
 

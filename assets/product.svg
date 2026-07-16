@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" role="img" aria-label="Autonomous Loop — product shot">
+  <defs>
+    <style>
+      .t { font-family: ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace; font-size: 17px; }
+      .title { font-family: ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace; font-size: 14px; fill: #7D8590; }
+    </style>
+    <clipPath id="panel"><rect x="1" y="1" width="1198" height="358" rx="14"/></clipPath>
+  </defs>
+  <rect x="1" y="1" width="1198" height="358" rx="14" fill="#0D1117" stroke="#30363D" stroke-width="1.5"/>
+  <g clip-path="url(#panel)">
+    <path d="M1,15 a14,14 0 0 1 14,-14 h1170 a14,14 0 0 1 14,14 v41 h-1198 z" fill="#161B22"/>
+    <line x1="1" y1="56" x2="1199" y2="56" stroke="#30363D" stroke-width="1"/>
+    <circle cx="1060" cy="30" r="300" fill="#F0A73C" opacity="0.045"/>
+    <circle cx="30" cy="28" r="7" fill="#FF5F57"/>
+    <circle cx="54" cy="28" r="7" fill="#FEBC2E"/>
+    <circle cx="78" cy="28" r="7" fill="#28C840"/>
+    <text x="600" y="33" text-anchor="middle" class="title">autonomous-loop — bandit-run background work</text>
+    <rect x="0" y="56" width="4" height="304" fill="#F0A73C" opacity="0.85"/>
+    <text x="36" y="106" class="t"><tspan fill="#7D8590">$ </tspan><tspan fill="#F0A73C" font-weight="600">node examples/demo.cjs</tspan></text>
+    <text x="36" y="136" class="t" fill="#C9D1D9">bandit (UCB1) allocating 20 runs across the task fleet…</text>
+    <text x="36" y="166" class="t" fill="#C9D1D9">  high-value   16 cycles</text>
+    <text x="36" y="196" class="t" fill="#C9D1D9">  low-value     4 cycles</text>
+    <text x="36" y="226" class="t" fill="#3FB950">bandit favors the winner — exploit/explore from recorded rewards</text>
+    <text x="36" y="286" class="t" fill="#7D8590">pid-liveness lock: one instance; a dead PID never wedges the queue</text>
+    <text x="36" y="316" class="t" fill="#F0A73C" font-weight="600">runner seam: shell command · agent CLI · async fn — your choice</text>
+  </g>
+</svg>
